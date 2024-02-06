@@ -5354,7 +5354,7 @@ GameObject:
   - component: {fileID: 2037904095}
   - component: {fileID: 2037904094}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5440,7 +5440,7 @@ Transform:
   m_GameObject: {fileID: 2037904093}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23, y: 1.2, z: 16}
+  m_LocalPosition: {x: 23.428, y: 1.2, z: 16}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
