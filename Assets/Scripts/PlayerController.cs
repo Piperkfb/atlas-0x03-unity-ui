@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
         private Rigidbody rb;
         private int score;
         public int health;
+        public Text scoreUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +56,8 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Pickup")
         {
             score++;
-            Debug.Log($"Score: {score}");
+            //Debug.Log($"Score: {score}");
+            SetScoreText();
             Destroy(other.gameObject);
         }
         if (other.tag == "Trap")
@@ -66,5 +69,9 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log($"You win!");
         }
+    }
+    void SetScoreText()
+    {
+        scoreUI.text = $"Score: {score}";
     }
 }
