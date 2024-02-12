@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviour
             winLoseText.text = ($"Game Over!");
             winLoseBG.gameObject.SetActive(true);
             //Debug.Log("Game Over!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+            StartCoroutine(LoadScene(3));
         }
     }
     void playermove()
@@ -79,8 +80,15 @@ public class PlayerController : MonoBehaviour
             winLoseText.color = Color.black;
             winLoseText.text = ($"You Win!");
             winLoseBG.gameObject.SetActive(true);
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+            StartCoroutine(LoadScene(3));
             //Debug.Log($"You win!");
         }
+    }
+    IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(0);
     }
     void SetScoreText()
     {
